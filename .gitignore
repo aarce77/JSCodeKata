@@ -1,6 +1,8 @@
 build/
 node_modules/
 bower_components/
+test/
+_reports/
 *.dll
 bin/
 /$tf1
