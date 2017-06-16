@@ -33,7 +33,6 @@ var testCase3 = `10
     
     it('Test Case #2', () => {
         let cc = new CaesarCipher(testCase2);
-        debugger;
         let result = cc.encrypt();
 
         expect(result).toBe("fff.jkl.gh");
@@ -41,7 +40,6 @@ var testCase3 = `10
 
     it('Test Case #3', () => {
         let cc = new CaesarCipher(testCase3);
-        debugger;
         let result = cc.encrypt();
 
         expect(result).toBe("159357fwzx");
