@@ -35,7 +35,9 @@ gulp.task('specs', function () {
 gulp.task('build', function() {
     return gulp.src(['src/**/**/*.js', 
         '!src/**/**/*spec.js'])
+    .pipe(sourcemaps.init())
     .pipe(concat('src.js'))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(DEST + 'build'));
 });
 
