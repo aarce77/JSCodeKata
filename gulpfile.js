@@ -25,7 +25,7 @@ gulp.task('run-tests', ['build','specs'], function (done) {
 });
 
 gulp.task('specs', function () {
-    return gulp.src(['*.spec.js', '**/*.spec.js','**/**/*.spec.js', '!node_modules/**/*.spec.js'])
+    return gulp.src(['*.spec.js', 'src/**/**/*.spec.js'])
     .pipe(sourcemaps.init())
     .pipe(concat('specs.js'))
     .pipe(sourcemaps.write())
@@ -33,10 +33,8 @@ gulp.task('specs', function () {
 });
 
 gulp.task('build', function() {
-    return gulp.src(['Algorithms/**/*.js', 
-        'DataStructures/**/*.js', 
-        '!Algorithms/**/*spec.js', 
-        '!DataStructures/**/*spec.js'])
+    return gulp.src(['src/**/**/*.js', 
+        '!src/**/**/*spec.js'])
     .pipe(concat('src.js'))
     .pipe(gulp.dest(DEST + 'build'));
 });
