@@ -2,6 +2,7 @@
   "description": "Code kata practice, every developer should sharpen their skills",
   "license": "Open Source",
   "devDependencies": {
+    "bignumber.js": "^4.0.2",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.1",
     "gulp-shell": "^0.5.1",
