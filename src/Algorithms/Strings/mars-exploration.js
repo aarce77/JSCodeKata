@@ -27,6 +27,3 @@ class MarsExploration {
         return this.NonMatching; 
     }
 }
-
-let mars = new MarsExploration("SOS");
-console.log(mars.GetNonMatchingCount());
