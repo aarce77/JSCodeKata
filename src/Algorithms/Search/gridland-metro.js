@@ -1,8 +1,11 @@
 class GridlandMetro
 {
     constructor(input) {
-        this.totalCells = 0;
-        this.consumedCells = 0;
+        this.BigInteger = require("bignumber.js");
+        this.totalCells = new this.BigInteger(0);
+        this.consumedCells = new this.BigInteger(0);
+        //this.totalCells = 0;
+        //this.consumedCells = 0;
         this.AvailableCells = this.processData(input);
     }
 
@@ -10,12 +13,13 @@ class GridlandMetro
         var data = input.split("\n");
         var gs = data.shift().split(" ").map(Number);
 
-        this.totalCells = (gs[0] * gs[1]);
+        //this.totalCells = (gs[0] * gs[1]);
+        this.totalCells = new this.BigInteger(gs[0]).mul(gs[1]);
 
         var dic = this.groupByRow(data, data.length);
         this.merge(dic);
 
-        return this.totalCells - this.consumedCells;
+        return this.totalCells.minus(this.consumedCells.toFixed());
     }
 
     merge(dic) {
@@ -48,15 +52,17 @@ class GridlandMetro
 
                 if(!merged) {
                     sum += (currentRange[1]-currentRange[0])+1;
-                    this.consumedCells += ((currentRange[1]-currentRange[0])+1);
+                    //this.consumedCells += ((currentRange[1]-currentRange[0])+1);
+                    this.consumedCells = this.consumedCells.plus((currentRange[1]-currentRange[0])+1);
                     mergedRanges.push(currentRange);
                     currentRange = item;
                 }
             }
 
             // do something with the last one
-            this.consumedCells += ((currentRange[1]-currentRange[0])+1);
-            
+            //this.consumedCells += ((currentRange[1]-currentRange[0])+1);
+            this.consumedCells = this.consumedCells.plus((currentRange[1]-currentRange[0])+1);
+
             mergedRanges.push(currentRange);
             dic[idx] = mergedRanges;
         }
