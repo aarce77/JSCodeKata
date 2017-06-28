@@ -1,8 +1,16 @@
+describe('Algorithms', () => {
 
-describe('Camel Case', function () {
-  it('Sample Test Case', function () {
-    var camelCase = new CamelCase("saveChangesInTheEditor");
+  describe('Strings', () => {
 
-    expect(camelCase.WordCount).toBe(5);
+    describe('Camel Case', function () {
+      it('Sample Test Case', function () {
+        var camelCase = new CamelCase("saveChangesInTheEditor");
+
+        expect(camelCase.WordCount).toBe(5);
+      });
+
+    });
+
   });
+
 });

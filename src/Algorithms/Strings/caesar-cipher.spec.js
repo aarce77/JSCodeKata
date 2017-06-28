@@ -1,48 +1,45 @@
 
-describe('Caesar Cipher', () => {
-var sampleTestData = `11
-middle-Outz
-2`;
+describe('Algorithms', () => {
 
-var withNumbers = `11
-middle-Outz12_2ay
-2`;
+    describe('Strings', () => {
 
-var testCase2 = `10
-www.abc.xy
-87`;
+        describe('Caesar Cipher', () => {
 
-var testCase3 = `10
-159357lcfd
-98`;
+            it('Sample Test Case', () => {
+                var sampleTestData = `11\nmiddle-Outz\n2`;
+                let cc = new CaesarCipher(sampleTestData);
+                let result = cc.encrypt();
 
-    it('Sample Test Case', () => {
-        let cc = new CaesarCipher(sampleTestData);
-        let result = cc.encrypt();
+                expect(result).toBe("okffng-Qwvb");
+            });
 
-        expect(result).toBe("okffng-Qwvb");
+            it('With Numbers', () => {
+                var withNumbers = `11\nmiddle-Outz12_2ay\n2`;
+                let cc = new CaesarCipher(withNumbers);
+                let result = cc.encrypt();
+
+                expect(result).toBe("okffng-Qwvb12_2ca");
+            });
+
+
+            it('Test Case #2', () => {
+                var testCase2 = `10\nwww.abc.xy\n87`;
+                let cc = new CaesarCipher(testCase2);
+                let result = cc.encrypt();
+
+                expect(result).toBe("fff.jkl.gh");
+            });
+
+            it('Test Case #3', () => {
+                var testCase3 = `10\n159357lcfd\n98`;
+                let cc = new CaesarCipher(testCase3);
+                let result = cc.encrypt();
+
+                expect(result).toBe("159357fwzx");
+            });
+
+        });
+
     });
 
-    it('With Numbers', () => {
-        let cc = new CaesarCipher(withNumbers);
-        let result = cc.encrypt();
-
-        expect(result).toBe("okffng-Qwvb12_2ca");
-    }); 
-
-    
-    it('Test Case #2', () => {
-        let cc = new CaesarCipher(testCase2);
-        let result = cc.encrypt();
-
-        expect(result).toBe("fff.jkl.gh");
-    });
-
-    it('Test Case #3', () => {
-        let cc = new CaesarCipher(testCase3);
-        let result = cc.encrypt();
-
-        expect(result).toBe("159357fwzx");
-    });
-        
 });

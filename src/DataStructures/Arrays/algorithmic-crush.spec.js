@@ -1,13 +1,18 @@
 
-describe('Algorithmic Crush', () => {
-var sampleTestData = `5 3
-1 2 100
-2 5 100
-3 4 100`
-    it('Sample Test Case', () => {
-        var aCrush = new AlgorithmicCrush(sampleTestData);
+describe('Data Structure', () => {
+    
+    describe('Arrays', () => {
+        
+        describe('Algorithmic Crush', () => {
+            var sampleTestData = `5 3\n1 2 100\n2 5 100\n3 4 100`;
+            it('Sample Test Case', () => {
+                var aCrush = new AlgorithmicCrush(sampleTestData);
 
-        expect(aCrush.MaximumValue).toBe(200);
+                expect(aCrush.MaximumValue).toBe(200);
+            });
+        });
+        
     });
+        
 });
     

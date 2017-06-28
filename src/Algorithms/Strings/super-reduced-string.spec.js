@@ -1,8 +1,13 @@
+describe('Algorithms', () => {
 
-describe('Super Reduced String', function () {
-  it('Sample Test Case', function () {
-    var superReducedString = new SuperReducedString("aaabccddd");
+	describe('Strings', () => {
+		
+		describe('Super Reduced String', function () {
+			it('Sample Test Case', function () {
+				var superReducedString = new SuperReducedString("aaabccddd");
 
-    expect(superReducedString.reduceString()).toBe("abd");
-  });
+				expect(superReducedString.reduceString()).toBe("abd");
+			});
+		});
+	});
 });

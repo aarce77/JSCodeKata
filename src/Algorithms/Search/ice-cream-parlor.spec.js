@@ -1,30 +1,32 @@
+describe('Algorithms', () => {
 
-describe('Ice Cream Parlor', () => {
-    
-    
-    it('Sample Test Case', () => {
-        var input = "2\n4\n5\n1 4 5 3 2\n4\n4\n2 2 4 3";
-        var results = [{location1: 1, location2: 4}, {location1: 1, location2: 2}];
+    describe('Search', () => {
 
-        var data = input.split("\n");
-        var q = parseInt(data.shift());
+        describe('Ice Cream Parlor', () => {
 
-        for (var i = 0; i < q; i++) {
-            var money = parseInt(data.shift());
-            var flavorCount = parseInt(data.shift());
-            var flavors = data.shift().split(' ').map(Number);
+            it('Sample Test Case', () => {
+                var input = "2\n4\n5\n1 4 5 3 2\n4\n4\n2 2 4 3";
+                var results = [{ location1: 1, location2: 4 }, { location1: 1, location2: 2 }];
 
-            var parlor = new IceCreamParlor(money, flavors);
-            var res = parlor.findLocations();
+                var data = input.split("\n");
+                var q = parseInt(data.shift());
 
-            expect(res.location1).toBe(results[i].location1);
-            expect(res.location2).toBe(results[i].location2);
-        }
-    });
-    
-    
-    it('Test Case #1', () => {
-        var input = `10
+                for (var i = 0; i < q; i++) {
+                    var money = parseInt(data.shift());
+                    var flavorCount = parseInt(data.shift());
+                    var flavors = data.shift().split(' ').map(Number);
+
+                    var parlor = new IceCreamParlor(money, flavors);
+                    var res = parlor.findLocations();
+
+                    expect(res.location1).toBe(results[i].location1);
+                    expect(res.location2).toBe(results[i].location2);
+                }
+            });
+
+
+            it('Test Case #1', () => {
+                var input = `10
 100
 3
 5 75 25
@@ -56,33 +58,36 @@ describe('Ice Cream Parlor', () => {
 17
 678 227 764 37 956 982 118 212 177 597 519 968 866 121 771 343 561`;
 
-        var results = [
-            {location1: 2, location2: 3}, 
-            {location1: 1, location2: 4},
-            {location1: 4, location2: 5},
-            {location1: 29, location2: 46},
-            {location1: 11, location2: 56},
-            {location1: 4, location2: 5},
-            {location1: 40, location2: 46},
-            {location1: 16, location2: 35},
-            {location1: 55, location2: 74},
-            {location1: 7, location2: 9}];
+                var results = [
+                    { location1: 2, location2: 3 },
+                    { location1: 1, location2: 4 },
+                    { location1: 4, location2: 5 },
+                    { location1: 29, location2: 46 },
+                    { location1: 11, location2: 56 },
+                    { location1: 4, location2: 5 },
+                    { location1: 40, location2: 46 },
+                    { location1: 16, location2: 35 },
+                    { location1: 55, location2: 74 },
+                    { location1: 7, location2: 9 }];
 
-        var data = input.split("\n");
-        var q = parseInt(data.shift());
+                var data = input.split("\n");
+                var q = parseInt(data.shift());
 
-        for (var i = 0; i < q; i++) {
-            var money = parseInt(data.shift());
-            var flavorCount = parseInt(data.shift());
-            var flavors = data.shift().split(' ').map(Number);
+                for (var i = 0; i < q; i++) {
+                    var money = parseInt(data.shift());
+                    var flavorCount = parseInt(data.shift());
+                    var flavors = data.shift().split(' ').map(Number);
 
-            var parlor = new IceCreamParlor(money, flavors);
-            var res = parlor.findLocations();
+                    var parlor = new IceCreamParlor(money, flavors);
+                    var res = parlor.findLocations();
 
-            expect(res.location1).toBe(results[i].location1);
-            expect(res.location2).toBe(results[i].location2);
-        }
+                    expect(res.location1).toBe(results[i].location1);
+                    expect(res.location2).toBe(results[i].location2);
+                }
+            });
+
+        });
+
     });
-        
+
 });
-    
