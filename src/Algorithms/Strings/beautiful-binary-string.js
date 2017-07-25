@@ -21,6 +21,3 @@ class BeautifulBinaryString {
         this.Steps = 0;
     }
 }
-
-var bbs = new BeautifulBinaryString("10", "0100101010");
-console.log(bbs.Steps);
